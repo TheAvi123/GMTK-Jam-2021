@@ -12,16 +12,19 @@ public class AutoHider : MonoBehaviour
     public float maxDistance = 100;
     public bool doShow = true;
     public bool doScale = false;
+    
 
     // Update is called once per frame
     void Update()
     {
+
         disappearCheck();
     }
     private void disappearCheck()
     {
         foreach(Transform child in mapObj.transform)
         {
+
             float distance = Vector3.Distance(child.position, transform.position);
 
             if(distance < desiredDistance)
