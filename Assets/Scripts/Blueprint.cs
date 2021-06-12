@@ -9,6 +9,7 @@ public class Blueprint : MonoBehaviour
     RaycastHit hit;
     Vector3 movePoint;
     private readonly int layerMask = 1 << 6;
+    private readonly int buildLayerMask = 1 << 7;
     private int BuildingColissionLayerMask;
     public GameObject realObject;
     public Material okMaterial;
@@ -146,6 +147,14 @@ public class Blueprint : MonoBehaviour
                     resourceManager.RemoveResource(Resource.Wood, buildCost.wood);
                     resourceManager.RemoveResource(Resource.Stone, buildCost.stone);
                 }
+            }
+            else if (canBuild == true && canAfford == false)
+            {
+                //todo something something, can't afford - Maybe a little popup text.
+            }
+            else
+            {
+                Destroy(gameObject);
             }
         }
         if (Input.GetMouseButtonDown(1))
