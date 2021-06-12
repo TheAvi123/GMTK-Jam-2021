@@ -9,7 +9,7 @@ public class Blueprint : MonoBehaviour
     RaycastHit hit;
     Vector3 movePoint;
     private readonly int layerMask = 1 << 6;
-    private readonly int UILayerMask = 1 << 5;
+    private int BuildingColissionLayerMask;
     public GameObject realObject;
     public Material okMaterial;
     public Material noMoneyMaterial;
@@ -17,19 +17,42 @@ public class Blueprint : MonoBehaviour
     public float yOffset;
     public bool canBuild;
     public bool canAfford;
-    private GameObject resourceManager = GameObject.Find("ResourceManger");
+    // private GameObject resourceManager = GameObject.Find("ResourceManger");
     private int cost; 
 
     private void Start()
     {
+        BuildingColissionLayerMask = LayerMask.NameToLayer("Buildings");
         //canAfford = resourceManager.canAfford(cost);
-        
+        canAfford = true;
+        canBuild = true;
+    }
 
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.layer == BuildingColissionLayerMask)
+        {
+            canBuild = false;
+        }
+    }
+    private void OnTriggerStay(Collider collider)
+    {
+        if (collider.gameObject.layer == BuildingColissionLayerMask)
+        {
+            canBuild = false;
+        }
+    }
+    private void OnTriggerExit(Collider collider)
+    {
+        if (collider.gameObject.layer == BuildingColissionLayerMask)
+        {
+            canBuild = true;
+        }
     }
 
     void Update()
     {
-
+        
         if (canBuild)
         {
             if (canAfford)
@@ -62,10 +85,13 @@ public class Blueprint : MonoBehaviour
             {
                 Destroy(gameObject);
             }
-            else if(Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
+            else if (canBuild == true && canAfford == true)
             {
-                Instantiate(realObject, transform.position, transform.rotation);
-                Destroy(gameObject);
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
+                {
+                    Instantiate(realObject, transform.position, transform.rotation);
+                    Destroy(gameObject);
+                }
             }
         }
         if (Input.GetMouseButtonDown(1))
