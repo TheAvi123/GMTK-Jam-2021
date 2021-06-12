@@ -33,11 +33,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - FoamWidth: -0.57
-    - RippleDensity: 5
-    - RippleSpeed: 1
-    - RippleThickness: 2.5
+    - FoamWidth: -1
+    - RippleDensity: 15
+    - RippleSpeed: 0.8
+    - RippleThickness: 3
     m_Colors:
-    - RippleColor: {r: 0.9740499, g: 1, b: 0.4470588, a: 0}
-    - WaterColor: {r: 0.0177821, g: 0.2234007, b: 0.3490566, a: 0}
+    - RippleColor: {r: 0.19670703, g: 0.3958273, b: 0.4056604, a: 0}
+    - WaterColor: {r: 0, g: 0.25258103, b: 0.4056604, a: 0}
   m_BuildTextureStacks: []
