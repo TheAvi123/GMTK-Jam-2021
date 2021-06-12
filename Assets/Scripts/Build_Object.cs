@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Build_Object : MonoBehaviour
 {
-    public GameObject objectBlueprint;
-    private GameObject clone;
+    List<GameObject> allBuildings = new List<GameObject>();
+    public GameObject[] blueprintPrefabs = default;
+    public int[] currentResources = default;
 
-    public void SpawnObjectBlueprint()
+    public void SpawnObjectBlueprint(int index)
     {
-        GameObject clone = Instantiate(objectBlueprint);
-    }
-    public void DestroyObjectBlueprint()
-    {
-        Destroy(clone);
+        GameObject clone = Instantiate(blueprintPrefabs[index]);
     }
 }
