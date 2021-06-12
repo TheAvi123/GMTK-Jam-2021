@@ -116,3 +116,5 @@ MonoBehaviour:
   yOffset: 0.5
   canBuild: 0
   canAfford: 0
+  woodResourceCost: 10
+  stoneResourceCost: 0

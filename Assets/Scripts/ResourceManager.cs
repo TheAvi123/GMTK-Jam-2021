@@ -33,11 +33,11 @@ public class ResourceManager : MonoBehaviour
     }
 
     // Public Methods
-    public void AddResources(Resource resource, int amount) {
+    public void AddResource(Resource resource, int amount) {
         resourceStockpiles[(int) resource] += amount;
     }
     
-    public void RemoveResources(Resource resource, int amount) {
+    public void RemoveResource(Resource resource, int amount) {
         resourceStockpiles[(int) resource] -= amount;
     }
 

@@ -17,14 +17,44 @@ public class Blueprint : MonoBehaviour
     public float yOffset;
     public bool canBuild;
     public bool canAfford;
-    // private GameObject resourceManager = GameObject.Find("ResourceManger");
-    private int cost; 
+    public int rotSpeed = 100;
+
+    //----------------------------------------------------
+    // Configuration Parameters
+    [Header("Build Cost")]
+    [SerializeField] private int woodResourceCost;
+    [SerializeField] private int stoneResourceCost;
+
+    // Internal Variables
+    private ResourceManager resourceManager;
+    private ResourceSet buildCost;
+    
+
+    private void FindResourceManager()
+    {
+        resourceManager = GameObject.FindObjectOfType<ResourceManager>();
+        if (!resourceManager)
+        {
+            Debug.LogError("No ResourceManager Found. Disabling Building.");
+            gameObject.SetActive(false);
+        }
+    }
+
+    private void GenerateBuildingResourceSet()
+    {
+        buildCost = new ResourceSet(woodResourceCost, stoneResourceCost);
+    }
+
+    //-------------------------------------------------
 
     private void Start()
     {
+        FindResourceManager();
+        GenerateBuildingResourceSet();
+
         BuildingColissionLayerMask = LayerMask.NameToLayer("Buildings");
-        //canAfford = resourceManager.canAfford(cost);
-        canAfford = true;
+
+        canAfford = resourceManager.CheckBuildingAffordability(buildCost);
         canBuild = true;
     }
 
@@ -50,12 +80,11 @@ public class Blueprint : MonoBehaviour
         }
     }
 
-    void Update()
+    private void MaterialSwitcher(bool build, bool afford)
     {
-        
-        if (canBuild)
+        if (build)
         {
-            if (canAfford)
+            if (afford)
             {
                 gameObject.GetComponent<MeshRenderer>().material = okMaterial;
             }
@@ -68,7 +97,30 @@ public class Blueprint : MonoBehaviour
         {
             gameObject.GetComponent<MeshRenderer>().material = conflictMaterial;
         }
+    }
+
+    private void rotationHandler()
+    {
+        if (Input.GetKey("e"))
+        {
+            transform.Rotate(new Vector3(0f, -rotSpeed, 0f) * Time.deltaTime);
+        }
+        else if (Input.GetKey("q"))
+        {
+            transform.Rotate(new Vector3(0f, rotSpeed, 0f) * Time.deltaTime);
+        }
+        else if (Input.GetKeyDown("r"))
+        {
+            transform.Rotate(new Vector3(0f, 90f, 0f));
+        }
+    }
+
+    void Update()
+    {
+        MaterialSwitcher(canBuild, canAfford);
+        rotationHandler();
         
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
@@ -91,6 +143,8 @@ public class Blueprint : MonoBehaviour
                 {
                     Instantiate(realObject, transform.position, transform.rotation);
                     Destroy(gameObject);
+                    resourceManager.RemoveResource(Resource.Wood, buildCost.wood);
+                    resourceManager.RemoveResource(Resource.Stone, buildCost.stone);
                 }
             }
         }
