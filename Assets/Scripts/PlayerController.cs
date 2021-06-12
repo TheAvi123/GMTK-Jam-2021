@@ -2,14 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private float playerSpeed = 2.0f;
-    [SerializeField]
-    private float jumpHeight = 1.0f;
-    [SerializeField]
-    private float gravityValue = -9.81f;
 
     private CharacterController controller;
     private Vector3 playerVelocity;
@@ -34,8 +31,7 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.transform.forward = move;
         }
-
-        playerVelocity.y += gravityValue * Time.deltaTime;
+        
         controller.Move(playerVelocity * Time.deltaTime);
     }
 }
