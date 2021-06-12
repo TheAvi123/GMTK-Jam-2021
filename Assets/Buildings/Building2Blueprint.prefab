@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 795d0dfb7cc62454b8465ce916dc90e3, type: 2}
+  - {fileID: 2100000, guid: 7116414ac3bd0874f849c440141f0125, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111,4 +111,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   realObject: {fileID: 785357504428393315, guid: ea0d22494819bc84c85cba96919befd2, type: 3}
+  okMaterial: {fileID: 2100000, guid: 7116414ac3bd0874f849c440141f0125, type: 2}
+  noMoneyMaterial: {fileID: 2100000, guid: 4b660dbcc9ef19044b72578070c18c5b, type: 2}
+  conflictMaterial: {fileID: 2100000, guid: 795d0dfb7cc62454b8465ce916dc90e3, type: 2}
   yOffset: 0.5
+  canBuild: 0
+  canAfford: 0

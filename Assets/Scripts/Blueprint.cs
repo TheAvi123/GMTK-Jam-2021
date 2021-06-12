@@ -11,15 +11,41 @@ public class Blueprint : MonoBehaviour
     private readonly int layerMask = 1 << 6;
     private readonly int UILayerMask = 1 << 5;
     public GameObject realObject;
+    public Material okMaterial;
+    public Material noMoneyMaterial;
+    public Material conflictMaterial;
     public float yOffset;
+    public bool canBuild;
+    public bool canAfford;
+    private GameObject resourceManager = GameObject.Find("ResourceManger");
+    private int cost; 
 
-    void Start()
+    private void Start()
     {
+        //canAfford = resourceManager.canAfford(cost);
         
+
     }
-    
+
     void Update()
     {
+
+        if (canBuild)
+        {
+            if (canAfford)
+            {
+                gameObject.GetComponent<MeshRenderer>().material = okMaterial;
+            }
+            else
+            {
+                gameObject.GetComponent<MeshRenderer>().material = noMoneyMaterial;
+            }
+        }
+        else
+        {
+            gameObject.GetComponent<MeshRenderer>().material = conflictMaterial;
+        }
+        
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
@@ -29,7 +55,7 @@ public class Blueprint : MonoBehaviour
             transform.position = newPosition;
         }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
 
             if (EventSystem.current.IsPointerOverGameObject())
@@ -41,6 +67,10 @@ public class Blueprint : MonoBehaviour
                 Instantiate(realObject, transform.position, transform.rotation);
                 Destroy(gameObject);
             }
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            Destroy(gameObject);
         }
     }
 }
