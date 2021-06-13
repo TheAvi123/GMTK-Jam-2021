@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 8b03c490cdfab43b194a91b0173b6ac8
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Nature Spirit
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: c44bdb4d84b7d4a7c8b8e1ee5a847c6b, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
