@@ -7,7 +7,7 @@ public class CloudGen: MonoBehaviour
     public GameObject cloud;
     public float width = 10;
     public float height = 10;
-    public float cloudSize = 0.1f;
+    public float cloudSize = 5;
     public float ranfactor;
     // Start is called before the first frame update
     void Start()

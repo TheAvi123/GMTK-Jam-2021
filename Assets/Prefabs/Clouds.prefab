@@ -46,5 +46,5 @@ MonoBehaviour:
   cloud: {fileID: 4407465949986176633, guid: ddb0c0acebdf95b469c0d084c230d885, type: 3}
   width: 100
   height: 100
-  cloudSize: 0.1
+  cloudSize: 3
   ranfactor: 0
