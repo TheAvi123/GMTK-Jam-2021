@@ -1,17 +1,25 @@
+using System;
+
+using Systems;
+
 using UnityEngine;
 
 public class MenuController : MonoBehaviour 
 {
-
     // Reference Variables
-
-    // Configuration Parameters
+    private GameStateManager gameStateManager;
     
-    // State Variables
-
     // Internal Methods
     private void Start() {
-        
+        FindGameStateManager();
+    }
+
+    private void FindGameStateManager() {
+        gameStateManager = FindObjectOfType<GameStateManager>();
+        if (!gameStateManager) {
+            Debug.LogError("No GameStateManager Found in Scene!");
+            gameObject.SetActive(false);
+        }
     }
 
     void Update() {
@@ -19,8 +27,10 @@ public class MenuController : MonoBehaviour
     }
 
     private void CheckForInput() {
-        throw new System.NotImplementedException();
-    }
+        if (Input.anyKey) {
+            gameStateManager.LoadTutorial();
+        }
+    }   
 
     // Public Methods
 }
