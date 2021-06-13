@@ -57,7 +57,7 @@ public class CameraController : MonoBehaviour
             }
         }
         // Zoom Inputs
-        newZoom += new Vector3(0, Input.mouseScrollDelta.y, 0);
+        newZoom += new Vector3(0, Input.mouseScrollDelta.y*-1, 0);
 
         if (newZoom.y < minHeight)
         {
