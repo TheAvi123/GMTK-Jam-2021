@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3750236681946050332}
   - component: {fileID: -211697065397038051}
   m_Layer: 0
-  m_Name: Cloud
+  m_Name: Cloud2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,8 +89,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.023
-  m_Center: {x: 0, y: 0.01, z: 0}
+  m_Radius: 0.04
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4682142266930676202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,4 +140,4 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4407465949986176633}
-  m_Mesh: {fileID: -1050480386633182426, guid: 614f2c2a08385d846ba53b9d4fddced1, type: 3}
+  m_Mesh: {fileID: -4195451809229774376, guid: e755a11d5897ad4408292f32d6ae9ec8, type: 3}

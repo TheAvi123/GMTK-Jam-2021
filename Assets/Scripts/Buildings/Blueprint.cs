@@ -50,12 +50,11 @@ public class Blueprint : MonoBehaviour
 
     private void Start()
     {
+        gameObject.transform.position = new Vector3(1000, 1000, 1000);
         buildingContainer = GameObject.Find("BuildingContainer");
         FindResourceManager();
         GenerateBuildingResourceSet();
-
         BuildingColissionLayerMask = LayerMask.NameToLayer("Buildings");
-
         canAfford = resourceManager.CheckBuildingAffordability(buildCost);
         canBuild = true;
     }

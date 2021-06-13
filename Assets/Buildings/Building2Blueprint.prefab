@@ -119,7 +119,7 @@ MonoBehaviour:
   canBuild: 0
   canAfford: 0
   rotSpeed: 100
-  woodResourceCost: 15
+  woodResourceCost: 30
   stoneResourceCost: 0
 --- !u!1 &815435445293856117
 GameObject:

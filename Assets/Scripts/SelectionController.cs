@@ -24,7 +24,7 @@ public class SelectionController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(mousePos);
-            
+
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, buildLayerMask))
             {
                 Debug.Log("TODO");
