@@ -727,7 +727,14 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 750315297}
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+m_GameObject: {fileID: 750315297}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -760,17 +767,6 @@ CanvasRenderer:
   m_GameObject: {fileID: 750315297}
   m_CullTransparentMesh: 1
 --- !u!1 &922056103
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 922056104}
-  - component: {fileID: 922056105}
-  m_Layer: 5
-  m_Name: Hud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -806,9 +802,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 922056103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82e7189e27d4a764aa24ccec5422c098, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+
   blueprintPrefabs:
   - {fileID: 4298611622319517379, guid: fb077e1f0e57a05468add0857a111877, type: 3}
   - {fileID: 1270928401355071371, guid: ec0ec53319bbe064da408f135a70a651, type: 3}
@@ -1716,7 +1713,7 @@ Canvas:
   m_TargetDisplay: 0
 --- !u!1 &1682747648
 GameObject:
-  m_ObjectHideFlags: 0
+m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2133,7 +2130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2237299848699370390, guid: cdd12d3c97677124eb6c76a82592d0e7, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2237299848699370390, guid: cdd12d3c97677124eb6c76a82592d0e7, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2177,15 +2174,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2237299848699370390, guid: cdd12d3c97677124eb6c76a82592d0e7, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2237299848699370390, guid: cdd12d3c97677124eb6c76a82592d0e7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2237299848699370390, guid: cdd12d3c97677124eb6c76a82592d0e7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2237299848699370390, guid: cdd12d3c97677124eb6c76a82592d0e7, type: 3}
       propertyPath: m_AnchoredPosition.x
