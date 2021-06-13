@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class Blueprint : MonoBehaviour
 {
 
+    private GameObject buildingContainer;
     RaycastHit hit;
     Vector3 movePoint;
     private readonly int layerMask = 1 << 6;
@@ -49,6 +50,7 @@ public class Blueprint : MonoBehaviour
 
     private void Start()
     {
+        buildingContainer = GameObject.Find("BuildingContainer");
         FindResourceManager();
         GenerateBuildingResourceSet();
 
@@ -141,7 +143,8 @@ public class Blueprint : MonoBehaviour
             {
                 if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
                 {
-                    Instantiate(realObject, transform.position, transform.rotation);
+                    GameObject real = Instantiate(realObject, transform.position, transform.rotation);
+                    real.transform.parent = buildingContainer.transform;
                     Destroy(gameObject);
                     resourceManager.RemoveResource(Resource.Wood, buildCost.wood);
                     resourceManager.RemoveResource(Resource.Stone, buildCost.stone);
