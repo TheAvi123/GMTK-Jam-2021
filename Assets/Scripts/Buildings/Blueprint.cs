@@ -20,8 +20,6 @@ public class Blueprint : MonoBehaviour
     public int rotSpeed = 100;
 
 
-    private InputManager inputManager;
-
     //----------------------------------------------------
     // Configuration Parameters
     [Header("Build Cost")]
@@ -52,8 +50,6 @@ public class Blueprint : MonoBehaviour
 
     private void Start()
     {
-        inputManager = GetComponent<InputManager>();
-        inputManager.busy = true;
         buildingContainer = GameObject.Find("BuildingContainer");
         FindResourceManager();
         GenerateBuildingResourceSet();
@@ -123,50 +119,49 @@ public class Blueprint : MonoBehaviour
 
     void Update()
     {
+        MaterialSwitcher(canBuild, canAfford);
+        rotationHandler();
+        
 
-        if (inputManager.onMap)
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
         {
-            MaterialSwitcher(canBuild, canAfford);
-            rotationHandler();
-            
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
+            Vector3 newPosition = hit.point;
+            newPosition.y += yOffset;
+            transform.position = newPosition;
+        }
+        
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (EventSystem.current.IsPointerOverGameObject())
             {
-                Vector3 newPosition = hit.point;
-                newPosition.y += yOffset;
-                transform.position = newPosition;
+                Destroy(gameObject);
             }
-            if (Input.GetMouseButtonDown(0))
+            else if (canBuild == true && canAfford == true)
             {
-                if (EventSystem.current.IsPointerOverGameObject())
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
                 {
+                    GameObject real = Instantiate(realObject, transform.position, transform.rotation);
+                    real.transform.parent = buildingContainer.transform;
                     Destroy(gameObject);
-                }
-                else if (canBuild == true && canAfford == true)
-                {
-                    if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
-                    {
-                        GameObject real = Instantiate(realObject, transform.position, transform.rotation);
-                        real.transform.parent = buildingContainer.transform;
-                        Destroy(gameObject);
-                        resourceManager.RemoveResource(Resource.Wood, buildCost.wood);
-                        resourceManager.RemoveResource(Resource.Stone, buildCost.stone);
-                    }
-                }
-                else if (canBuild == true && canAfford == false)
-                {
-                    //todo something something, can't afford - Maybe a little popup text.
-                }
-                else
-                {
-                    Destroy(gameObject);
+                    resourceManager.RemoveResource(Resource.Wood, buildCost.wood);
+                    resourceManager.RemoveResource(Resource.Stone, buildCost.stone);
                 }
             }
-            if (Input.GetMouseButtonDown(1))
+            else if (canBuild == true && canAfford == false)
+            {
+                //todo something something, can't afford - Maybe a little popup text.
+            }
+            else
             {
                 Destroy(gameObject);
             }
         }
+        if (Input.GetMouseButtonDown(1))
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }
