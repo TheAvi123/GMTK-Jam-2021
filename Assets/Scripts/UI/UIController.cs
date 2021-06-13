@@ -29,6 +29,7 @@ public class UIController : MonoBehaviour
             {
                 camSys.transform.position = new Vector3(camSys.transform.position.x, camSys.transform.position.y-1, camSys.transform.position.z);
                 title.SetActive(false);
+                hud.SetActive(true);
                 world.SetActive(true);
             }
         }

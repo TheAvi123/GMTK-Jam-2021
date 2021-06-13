@@ -6,33 +6,34 @@ public class AudioManager : MonoBehaviour
 
     // Configuration Parameters
     [Header("Audio Files")] 
-    [SerializeField] private float loopDuration = 0.0f;
-    [SerializeField] private AudioSource[] checkpointBuildings;
+    [SerializeField] private int checkpointCount = 0;
+    [SerializeField] private AudioClip[] checkpointAudioClips;
+    [SerializeField] private GameObject[] checkpointBuildings;
 
     // State Variables
-    private float ticker;
+    private bool[] checkpointStatus;
 
     // Internal Methods
-    void Update() {
-        IncreaseTicker();
+    private void Start() {
+        CheckArraySizes();
+        InitializeCheckpointStatusArray();
     }
 
-    private void IncreaseTicker() {
-        ticker -= Time.deltaTime;
-        if (ticker <= 0.0f) {
-            foreach (AudioSource audioSource in checkpointBuildings) {
-                Checkpoint checkpoint = audioSource.GetComponent<Checkpoint>();
-                if (!checkpoint) {
-                    Debug.LogError("No Checkpoint Script Found on Checkpoint Building.");
-                    gameObject.SetActive(false);
-                }
-                if (checkpoint.GetCheckpointStatus()) {
-                    audioSource.Play();
-                }
-            }
-
-            ticker = loopDuration;
+    private void CheckArraySizes() {
+        if (checkpointAudioClips.Length != checkpointCount) {
+            Debug.LogError("Number of Audio Clips does not match checkpoint Count");
         }
+        if (checkpointBuildings.Length != checkpointCount) {
+            Debug.LogError("Number of Checkpoint Buildings does not match checkpoint Count");
+        }
+    }
+
+    private void InitializeCheckpointStatusArray() {
+        checkpointStatus = new bool[checkpointCount];
+    }
+
+    void Update() {
+        
     }
 
     // Public Methods
