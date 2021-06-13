@@ -6,8 +6,8 @@ public class SelectionController : MonoBehaviour
 {
 
     RaycastHit hit;
-    private readonly int buildLayerMask = LayerMask.NameToLayer("Buildings");
-    private readonly int resourceLayerMask = LayerMask.NameToLayer("Resources");
+    private int buildLayerMask;
+    private int resourceLayerMask;
     private int ObjectLayerMask;
 
 
@@ -15,21 +15,32 @@ public class SelectionController : MonoBehaviour
 
     void Start()
     {
-        ObjectLayerMask = buildLayerMask | resourceLayerMask;
+    buildLayerMask = LayerMask.NameToLayer("Buildings");
+    resourceLayerMask = LayerMask.NameToLayer("Resources");
     }
 
     // Update is called once per frame
     void Update()
     {
+        buildLayerMask = LayerMask.NameToLayer("Buildings");
+        resourceLayerMask = LayerMask.NameToLayer("Resources");
+        
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(mousePos);
+            RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, buildLayerMask))
-            {
-                Debug.Log("TODO");
-                //todo call the interface function to open up infos about the object
-            }
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+                if (hit.transform.gameObject.layer == buildLayerMask)
+                {
+                    Debug.Log("TODO");
+                    //todo call the interface function to open up infos about the object
+                }
+                else if (hit.transform.gameObject.layer == resourceLayerMask)
+                {
+                    Debug.Log("TODO");
+                    //todo call the interface function to open up infos about the object
+                }
         }
     }
 }

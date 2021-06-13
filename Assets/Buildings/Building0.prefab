@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6029618160253989337}
   - component: {fileID: 8725432277138944258}
   - component: {fileID: 5932243654504596693}
+  - component: {fileID: 4438211040663057379}
   m_Layer: 7
   m_Name: Building0
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3179694576227084887}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 25, y: 25, z: 25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6063877786387917004}
   m_Father: {fileID: 0}
@@ -63,6 +64,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &4438211040663057379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3179694576227084887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"declarations":{"collection":{"$content":[{"name":"text","value":{"$content":"This
+      is a fine looking hut, but would you really want to live in here?! If you would
+      tear it down like myself, then press the button.","$type":"System.String"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+    _objectReferences: []
 --- !u!1001 &6029618161202351911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76,15 +94,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c666f391f795e04ba79e8d31b28c717, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c666f391f795e04ba79e8d31b28c717, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c666f391f795e04ba79e8d31b28c717, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c666f391f795e04ba79e8d31b28c717, type: 3}
       propertyPath: m_LocalPosition.x
@@ -104,15 +122,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c666f391f795e04ba79e8d31b28c717, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c666f391f795e04ba79e8d31b28c717, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c666f391f795e04ba79e8d31b28c717, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c666f391f795e04ba79e8d31b28c717, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
