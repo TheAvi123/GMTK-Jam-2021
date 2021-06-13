@@ -123,8 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< HEAD:Assets/Scenes/Level 1.unity
-=======
 --- !u!1001 &264608537
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1088,4 +1086,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9c9ec3fe9be0054abcecdb4bff90511, type: 3}
->>>>>>> 01623069c7f53be2eddfb2ef31be5873ecceb242:Assets/Scenes/TutorialDemo.unity
