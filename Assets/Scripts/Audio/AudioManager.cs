@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 
     // Configuration Parameters
     [Header("Audio Files")] 
-    [SerializeField] private float loopDuration = 32.0f;
+    [SerializeField] private float loopDuration = 0.0f;
     [SerializeField] private AudioSource[] checkpointBuildings;
 
     // State Variables
@@ -18,8 +18,8 @@ public class AudioManager : MonoBehaviour
     }
 
     private void IncreaseTicker() {
-        ticker += Time.deltaTime;
-        if (ticker >= loopDuration) {
+        ticker -= Time.deltaTime;
+        if (ticker <= 0.0f) {
             foreach (AudioSource audioSource in checkpointBuildings) {
                 Checkpoint checkpoint = audioSource.GetComponent<Checkpoint>();
                 if (!checkpoint) {
@@ -30,6 +30,8 @@ public class AudioManager : MonoBehaviour
                     audioSource.Play();
                 }
             }
+
+            ticker = loopDuration;
         }
     }
 
