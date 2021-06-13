@@ -9,7 +9,6 @@ public class Blueprint : MonoBehaviour
     RaycastHit hit;
     Vector3 movePoint;
     private readonly int layerMask = 1 << 6;
-    private readonly int buildLayerMask = 1 << 7;
     private int BuildingColissionLayerMask;
     public GameObject realObject;
     public Material okMaterial;

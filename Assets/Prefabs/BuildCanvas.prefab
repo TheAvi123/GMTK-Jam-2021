@@ -278,7 +278,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8049928297065212325}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3969953663181098382}
+        m_TargetAssemblyTypeName: Build_Object, Assembly-CSharp
+        m_MethodName: SpawnObjectBlueprint
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3969953662783047615
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,8 +567,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blueprintPrefabs:
   - {fileID: 4298611622319517379, guid: fb077e1f0e57a05468add0857a111877, type: 3}
+  - {fileID: 1270928401355071371, guid: ec0ec53319bbe064da408f135a70a651, type: 3}
   - {fileID: 785357504428393315, guid: 4cd43f90ff226624196c9871dd4fc0fe, type: 3}
-  - {fileID: 0}
   - {fileID: 0}
   currentResources: 
 --- !u!1 &3969953663244554431
@@ -682,8 +694,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3969953663181098382}
         m_TargetAssemblyTypeName: Build_Object, Assembly-CSharp
-        m_MethodName: SpawnObject1Blueprint
-        m_Mode: 1
+        m_MethodName: SpawnObjectBlueprint
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -812,7 +824,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3969953664315752304}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3969953663181098382}
+        m_TargetAssemblyTypeName: Build_Object, Assembly-CSharp
+        m_MethodName: SpawnObjectBlueprint
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6990346300057080302
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,4 +957,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6603201684810007674}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3969953663181098382}
+        m_TargetAssemblyTypeName: Build_Object, Assembly-CSharp
+        m_MethodName: SpawnObjectBlueprint
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

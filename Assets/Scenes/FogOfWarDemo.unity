@@ -180,6 +180,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddb0c0acebdf95b469c0d084c230d885, type: 3}
+--- !u!1 &269385215 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 66513176078804621, guid: 36d4b1f2a8b6fd84095734345ead33b5, type: 3}
+  m_PrefabInstance: {fileID: 578461634}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &474959601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -338,6 +343,71 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &578461634
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 66513176078804621, guid: 36d4b1f2a8b6fd84095734345ead33b5, type: 3}
+      propertyPath: m_Name
+      value: Clouds
+      objectReference: {fileID: 0}
+    - target: {fileID: 66513176078804622, guid: 36d4b1f2a8b6fd84095734345ead33b5, type: 3}
+      propertyPath: width
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 66513176078804622, guid: 36d4b1f2a8b6fd84095734345ead33b5, type: 3}
+      propertyPath: height
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 66513176078804623, guid: 36d4b1f2a8b6fd84095734345ead33b5, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 66513176078804623, guid: 36d4b1f2a8b6fd84095734345ead33b5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 66513176078804623, guid: 36d4b1f2a8b6fd84095734345ead33b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 66513176078804623, guid: 36d4b1f2a8b6fd84095734345ead33b5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 66513176078804623, guid: 36d4b1f2a8b6fd84095734345ead33b5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 66513176078804623, guid: 36d4b1f2a8b6fd84095734345ead33b5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 66513176078804623, guid: 36d4b1f2a8b6fd84095734345ead33b5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 66513176078804623, guid: 36d4b1f2a8b6fd84095734345ead33b5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 66513176078804623, guid: 36d4b1f2a8b6fd84095734345ead33b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 66513176078804623, guid: 36d4b1f2a8b6fd84095734345ead33b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 66513176078804623, guid: 36d4b1f2a8b6fd84095734345ead33b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 36d4b1f2a8b6fd84095734345ead33b5, type: 3}
 --- !u!1 &724577463
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,54 +649,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -90, y: 90, z: 0}
---- !u!1 &1309512666
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1309512668}
-  - component: {fileID: 1309512667}
-  m_Layer: 0
-  m_Name: Clouds
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1309512667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1309512666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ecdd05e0c04145459e446552ca8ecb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cloud: {fileID: 4407465949986176633, guid: ddb0c0acebdf95b469c0d084c230d885, type: 3}
-  width: 128
-  height: 128
-  cloudSize: 3
-  ranfactor: 0
---- !u!4 &1309512668
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1309512666}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1427309592
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,11 +778,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279bac90bc03039408e649556d2d48ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapObj: {fileID: 1309512666}
+  mapObj: {fileID: 269385215}
   desiredDistance: 35
-  maxDistance: 100
-  doShow: 1
-  doScale: 1
+  maxDistance: 80
+  doShow: 0
+  doScale: 0
 --- !u!1 &1709593140
 GameObject:
   m_ObjectHideFlags: 0
