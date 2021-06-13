@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4748181208765078633}
   - component: {fileID: -3282730224738260412}
   m_Layer: 0
-  m_Name: Building2Blueprint
+  m_Name: Building3Blueprint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785357504428393315}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -6531525120215824829, guid: 18a487bbaa9a2734281d0c695134c6ba, type: 3}
 --- !u!23 &747886677575025656
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -94,8 +94,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 0.03
+  m_Height: 0.5
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!114 &-3282730224738260412
@@ -117,5 +117,6 @@ MonoBehaviour:
   yOffset: 0.5
   canBuild: 0
   canAfford: 0
+  rotSpeed: 100
   woodResourceCost: 15
   stoneResourceCost: 0
