@@ -9,21 +9,27 @@ public class SelectionController : MonoBehaviour
     private readonly int buildLayerMask = 1 << 7;
     private readonly int resourceLayerMask = 1 << 8;
     private int ObjectLayerMask;
-    private InputManager inputManager;
-    // Start is called before the first frame update
+
+
+    Vector2 mousePos;
+    float mouseClickFloat;
+
+    public InputManager inputManager;
+
     void Start()
     {
         ObjectLayerMask = buildLayerMask | resourceLayerMask;
-        inputManager = InputManager.Instance;
+        inputManager = GetComponent<InputManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (inputManager.)
+        if (mouseClickFloat > 0)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = Camera.main.ScreenPointToRay(mousePos);
+
+            Debug.Log("TODO");
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, ObjectLayerMask))
             {

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3806555443477030079}
   - component: {fileID: 7342890326113348310}
   - component: {fileID: 4614217414091032616}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hut2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,6 +129,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0f7414d84d5675648b70891c1f243e61, type: 3}
       propertyPath: m_Name
       value: Hut_2_circular base
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0f7414d84d5675648b70891c1f243e61, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f7414d84d5675648b70891c1f243e61, type: 3}
