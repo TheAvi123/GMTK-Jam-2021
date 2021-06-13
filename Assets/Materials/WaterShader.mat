@@ -34,7 +34,7 @@ Material:
     m_Ints: []
     m_Floats:
     - FoamWidth: -1
-    - RippleDensity: 15
+    - RippleDensity: 50
     - RippleSpeed: 0.8
     - RippleThickness: 3
     m_Colors:
