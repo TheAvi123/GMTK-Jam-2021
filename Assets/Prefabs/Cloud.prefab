@@ -127,8 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSize: 5
   minSize: 3
-  maxScaleSpeed: 2
-  minScaleSpeed: 0.25
+  maxScaleSpeed: 1
+  minScaleSpeed: 0.2
 --- !u!114 &-3750236681946050332
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,5 +4,10 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    
+    public bool inMenu;
+    public bool onMap;
+
+    public bool building;
+    public bool busy;
+
 }

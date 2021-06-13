@@ -25,16 +25,19 @@ public class SelectionController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (mouseClickFloat > 0)
+        if (inputManager.onMap && !inputManager.busy)
         {
-            Ray ray = Camera.main.ScreenPointToRay(mousePos);
-
-            Debug.Log("TODO");
-
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, ObjectLayerMask))
+            if (mouseClickFloat > 0)
             {
+                Ray ray = Camera.main.ScreenPointToRay(mousePos);
+
                 Debug.Log("TODO");
-                //todo call the interface function to open up infos about the object
+
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity, ObjectLayerMask))
+                {
+                    Debug.Log("TODO");
+                    //todo call the interface function to open up infos about the object
+                }
             }
         }
     }
