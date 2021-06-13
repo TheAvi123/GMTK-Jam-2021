@@ -46,10 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 1421559895043711864}
-  minX: -32
-  maxX: 32
-  minZ: -36
-  maxZ: 36
   minHeight: 1
   maxHeight: 10
   movementSpeed: 0.3
@@ -63,7 +59,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421559894716550653}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 279bac90bc03039408e649556d2d48ea, type: 3}
   m_Name: 

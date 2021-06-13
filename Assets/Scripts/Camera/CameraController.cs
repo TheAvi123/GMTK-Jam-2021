@@ -6,10 +6,6 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Transform cameraTransform;
 
     // Configuration Parameters
-    [SerializeField] private float minX = -32.0f;
-    [SerializeField] private float maxX = +32.0f;
-    [SerializeField] private float minZ = -36.0f;
-    [SerializeField] private float maxZ = +36.0f;
     [SerializeField] private float minHeight = 1f;
     [SerializeField] private float maxHeight = 10f;
     [SerializeField] private float movementSpeed = 0.3f;
@@ -63,18 +59,14 @@ public class CameraController : MonoBehaviour
         // Zoom Inputs
         newZoom += new Vector3(0, Input.mouseScrollDelta.y*-1, 0);
 
-        // if (newZoom.y < minHeight)
-        // {
-        //     newZoom.y = minHeight;
-        // }
-        // if (newZoom.y > maxHeight)
-        // {
-        //     newZoom.y = maxHeight;
-        // }
-
-        newZoom.y = Mathf.Clamp(newZoom.y, minHeight, maxHeight);
-        newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
-        newPosition.z = Mathf.Clamp(newPosition.z, minZ, maxZ);
+        if (newZoom.y < minHeight)
+        {
+            newZoom.y = minHeight;
+        }
+        if (newZoom.y > maxHeight)
+        {
+            newZoom.y = maxHeight;
+        }
 
         // Update Transforms
         float lerpFactor = Time.deltaTime * movementTime;
