@@ -12,7 +12,11 @@ public class AutoHider : MonoBehaviour
     public float maxDistance = 100;
     public bool doShow = true;
     public bool doScale = false;
-    
+
+    private void Start()
+    {
+        mapObj = GameObject.Find("Clouds");
+    }
 
     // Update is called once per frame
     void Update()

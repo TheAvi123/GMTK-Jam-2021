@@ -4,13 +4,15 @@ public class CameraController : MonoBehaviour
 {
     // Reference Variables
     [SerializeField] private Transform cameraTransform;
-    
+
     // Configuration Parameters
-    [SerializeField] private float movementSpeed = 1f;
+    [SerializeField] private float minHeight = 1f;
+    [SerializeField] private float maxHeight = 10f;
+    [SerializeField] private float movementSpeed = 0.3f;
     [SerializeField] private float movementTime = 5f;
-    [SerializeField] private float rotationSpeed = 1f;
+    [SerializeField] private float rotationSpeed = 3f;
     [SerializeField] private Vector3 zoomSpeed;
-    
+
     // State Variables
     private Vector3 newPosition;
     private Quaternion newRotation;
@@ -46,19 +48,26 @@ public class CameraController : MonoBehaviour
             newPosition += transform.right * movementSpeed;
         }
         // Rotational Inputs
-        if (Input.GetKey(KeyCode.Q)) {
-            newRotation *= Quaternion.Euler(Vector3.up * rotationSpeed);
-        }
-        if (Input.GetKey(KeyCode.E)) {
-            newRotation *= Quaternion.Euler(Vector3.up * -rotationSpeed);
+        if (Input.GetMouseButton(1))
+        {
+            float mousex = Input.GetAxis("Mouse X");
+            if (mousex != 0)
+            {
+                newRotation *= Quaternion.Euler(Vector3.up * rotationSpeed * mousex);
+            }
         }
         // Zoom Inputs
-        if (Input.GetKey(KeyCode.R)) {
-            newZoom += zoomSpeed;
-        } 
-        if (Input.GetKey(KeyCode.F)) {
-            newZoom -= zoomSpeed;
-        } 
+        newZoom += new Vector3(0, Input.mouseScrollDelta.y, 0);
+
+        if (newZoom.y < minHeight)
+        {
+            newZoom.y = minHeight;
+        }
+        if (newZoom.y > maxHeight)
+        {
+            newZoom.y = maxHeight;
+        }
+
         // Update Transforms
         float lerpFactor = Time.deltaTime * movementTime;
         transform.position = Vector3.Lerp(transform.position, newPosition, lerpFactor);
