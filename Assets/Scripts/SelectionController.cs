@@ -14,7 +14,7 @@ public class SelectionController : MonoBehaviour
     Vector2 mousePos;
     float mouseClickFloat;
 
-    public InputManager inputManager;
+    private InputManager inputManager;
 
     void Start()
     {
