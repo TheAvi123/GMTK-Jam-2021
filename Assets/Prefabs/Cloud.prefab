@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2451234262258843788}
-  - component: {fileID: 7622091139990920501}
   - component: {fileID: 1912286221159767314}
   - component: {fileID: 7516537157940810930}
   - component: {fileID: 4682142266930676202}
   - component: {fileID: 8886959822108029200}
   - component: {fileID: -3750236681946050332}
+  - component: {fileID: -211697065397038051}
   m_Layer: 0
   m_Name: Cloud
   m_TagString: Untagged
@@ -31,19 +31,11 @@ Transform:
   m_GameObject: {fileID: 4407465949986176633}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1280, y: 720, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 130, y: 130, z: 130}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7622091139990920501
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4407465949986176633}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1912286221159767314
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +56,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 54aac0b57fe0b5a488fbe8266f1b7453, type: 2}
+  - {fileID: 2100000, guid: 6e104a38f19ac7f488cd0af25418c127, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,8 +89,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.023
+  m_Center: {x: 0, y: 0.01, z: 0}
 --- !u!114 &4682142266930676202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,8 +103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ee92fafbc4858e4e8dbb86a517b8464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleSpeed: 0.1
-  maxSize: 0.12
+  scaleSpeed: 5
+  maxSize: 1
 --- !u!114 &8886959822108029200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,10 +117,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f06eb5e7d97a0b8439b9bab84ea3cd19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSize: 5
-  minSize: 3
-  maxScaleSpeed: 1
-  minScaleSpeed: 0.2
+  maxSize: 150
+  minSize: 70
+  maxScaleSpeed: 5
+  minScaleSpeed: 1
 --- !u!114 &-3750236681946050332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,3 +133,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0864de03dca2c5241863286f47709531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!33 &-211697065397038051
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4407465949986176633}
+  m_Mesh: {fileID: -1050480386633182426, guid: 614f2c2a08385d846ba53b9d4fddced1, type: 3}

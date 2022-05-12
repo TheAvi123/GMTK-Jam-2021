@@ -21,6 +21,10 @@ public class CloudGen: MonoBehaviour
                 float rany = Random.Range(0, ranfactor);
                 GameObject go = Instantiate(cloud, new Vector3(transform.position.x + ranx + x * cloudSize, transform.position.y, transform.position.z + rany + y * cloudSize), Quaternion.identity);
 
+                float randx = Random.Range(0, 360);
+                float randy = Random.Range(0, 360);
+                float randz = Random.Range(0, 360);
+                go.transform.rotation = Quaternion.Euler(randx, randy, randz);
                 go.name = "Cloud_" + x + "_" + y;
                 go.transform.SetParent(transform);
             }

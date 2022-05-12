@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cloud: {fileID: 4407465949986176633, guid: ddb0c0acebdf95b469c0d084c230d885, type: 3}
-  width: 100
-  height: 100
+  width: 130
+  height: 130
   cloudSize: 3
   ranfactor: 0
